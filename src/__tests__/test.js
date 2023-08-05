@@ -11,8 +11,12 @@ test('Check name while character creating', () => {
   expect(bowman.name).toBe('Teo');
 });
 
-test('Check throwing error while character creating', () => {
-  expect(() => { const test = (name, type) => new Character(name, type); test('Teo', 'Bwman'); }).toThrow('Введены некорректные параметры');
+test('Check throwing name error while character creating', () => {
+  expect(() => { const test = (name, type) => new Character(name, type); test('T', 'Bowman'); }).toThrow('Имя должно быть не менее 2 и не более 10 символов');
+});
+
+test('Check throwing type error while character creating', () => {
+  expect(() => { const test = (name, type) => new Character(name, type); test('Teo', 'Bwman'); }).toThrow('Указан несуществующий тип персонажа');
 });
 
 test('Creating a new character', () => {
