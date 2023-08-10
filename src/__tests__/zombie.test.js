@@ -12,3 +12,7 @@ test('Zombie creating', () => {
   };
   expect(zombie).toEqual(expected);
 });
+
+test('Check throwing type error while character creating', () => {
+  expect(() => { const test = (name, type) => new Zombie(name, type); test('Teo', 'Zombee'); }).toThrow('Указан несуществующий тип персонажа');
+});

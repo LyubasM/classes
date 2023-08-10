@@ -12,3 +12,7 @@ test('Undead creating', () => {
   };
   expect(undead).toEqual(expected);
 });
+
+test('Check throwing type error while character creating', () => {
+  expect(() => { const test = (name, type) => new Undead(name, type); test('Teo', 'Undd'); }).toThrow('Указан несуществующий тип персонажа');
+});

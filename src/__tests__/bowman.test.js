@@ -12,3 +12,7 @@ test('Bowman creating', () => {
   };
   expect(bowman).toEqual(expected);
 });
+
+test('Check throwing type error while Bowman creating', () => {
+  expect(() => { const test = (name, type) => new Bowman(name, type); test('Teo', 'Bwman'); }).toThrow('Указан несуществующий тип персонажа');
+});

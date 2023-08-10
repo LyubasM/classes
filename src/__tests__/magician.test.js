@@ -12,3 +12,7 @@ test('Magician creating', () => {
   };
   expect(magician).toEqual(expected);
 });
+
+test('Check throwing type error while character creating', () => {
+  expect(() => { const test = (name, type) => new Magician(name, type); test('Teo', 'Mgician'); }).toThrow('Указан несуществующий тип персонажа');
+});

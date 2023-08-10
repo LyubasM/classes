@@ -12,3 +12,7 @@ test('Daemon creating', () => {
   };
   expect(daemon).toEqual(expected);
 });
+
+test('Check throwing type error while character creating', () => {
+  expect(() => { const test = (name, type) => new Daemon(name, type); test('Teo', 'Dmon'); }).toThrow('Указан несуществующий тип персонажа');
+});

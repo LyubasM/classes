@@ -12,3 +12,7 @@ test('Swordsman creating', () => {
   };
   expect(swordsman).toEqual(expected);
 });
+
+test('Check throwing type error while character creating', () => {
+  expect(() => { const test = (name, type) => new Swordsman(name, type); test('Teo', 'Swordman'); }).toThrow('Указан несуществующий тип персонажа');
+});
